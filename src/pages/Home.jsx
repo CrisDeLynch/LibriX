@@ -24,7 +24,7 @@ const Home = () => {
       <header className="snap-start h-screen relative bg-indigo-900 text-white flex items-center overflow-hidden shadow-2xl">
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full bg-gradient-to-br from-purple-900 via-indigo-900 to-fuchsia-900 opacity-90"></div>
-          <div className="absolute inset-0 bg-[url('/stars.svg')] bg-cover bg-center opacity-10 animate-pulse" />
+          <div className="absolute inset-0 bg-cover bg-center opacity-10 animate-pulse" />
           <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-indigo-900 to-transparent" />
         </div>
         <div className="container mx-auto px-6 z-10 relative flex flex-col justify-center min-h-[80vh]">
