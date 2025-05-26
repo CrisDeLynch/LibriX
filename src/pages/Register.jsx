@@ -117,7 +117,7 @@ const Register = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-fuchsia-200 via-violet-100 to-violet-300 dark:from-zinc-900 dark:via-fuchsia-950 dark:to-zinc-900 flex flex-col items-center px-2 pb-10">
       <img
-        src="/src/img/Logo1.png"
+        src="/Logo1.png"
         alt="Logo"
         className="h-14 object-contain scale-100 mt-8"
         draggable={false}

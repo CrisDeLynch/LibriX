@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { cliente } from "../../conexionApi";
 import { Sparkles } from "lucide-react";
-import FraseDelDia from "../cLibrary/FraseDelDia";
+
 
 const banners = [
   {
@@ -52,7 +52,7 @@ const BannersSlider = () => {
 
   return (
     <section className="bg-gray-50 py-12 px-4 sm:px-6 md:px-10 space-y-12">
-      <FraseDelDia />
+   
       <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
         {banners.map(({ href, img, title, desc }, i) => (
           <a
