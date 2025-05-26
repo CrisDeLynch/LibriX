@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { cliente } from "../../conexionApi";
 import { Sparkles } from "lucide-react";
+import { Link } from "react-router";
+
 
 
 const banners = [
@@ -55,7 +57,7 @@ const BannersSlider = () => {
    
       <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
         {banners.map(({ href, img, title, desc }, i) => (
-          <a
+          <Link
             key={i}
             href={href}
             className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition block"
@@ -67,13 +69,12 @@ const BannersSlider = () => {
               </h4>
               <p className="text-sm text-gray-600">{desc}</p>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 
       {recomendacion && (
-        <a
-          href={`/libros/${recomendacion.id}`}
+       <Link to={`/libros/${recomendacion.id}`}
           className="w-full max-w-6xl mx-auto bg-white rounded-xl shadow-md hover:shadow-lg transition px-4 py-6 flex flex-col md:flex-row items-center md:items-center gap-4"
         >
           <img
@@ -94,7 +95,7 @@ const BannersSlider = () => {
               {recomendacion.descripcion || "Una lectura especial para hoy."}
             </p>
           </div>
-        </a>
+        </Link>
       )}
     </section>
   );
