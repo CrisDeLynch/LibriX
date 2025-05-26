@@ -21,16 +21,12 @@ const FraseDelDia = () => {
 
     // Si no hay frase válida -> obtener una nueva
     fetch("https://corsproxy.io/?" + encodeURIComponent("https://frasedeldia.azurewebsites.net/api/phrase"))
-
-      .then((res) => res.json())
-     .then((text) => {
+      .then((res) => res.text())
+      .then((text) => {
         try {
           const parsed = JSON.parse(text);
           setFrase(parsed);
-          localStorage.setItem(
-            "fraseDelDia",
-            JSON.stringify({ fecha: hoy, frase: parsed })
-          );
+          localStorage.setItem("fraseDelDia", JSON.stringify({ fecha: hoy, frase: parsed }));
         } catch (err) {
           console.error("Respuesta no es JSON válido:", text);
         }
@@ -39,7 +35,6 @@ const FraseDelDia = () => {
         console.error("Error al obtener la frase del día:", err)
       );
   }, []);
-
 
   if (!frase) return null;
 
