@@ -6,7 +6,7 @@ const Logo = ({ admin }) => (
     className="flex flex-col items-center justify-center mr-6 select-none"
   >
     <img
-      src="/src/img/Logo1.png"
+      src="/Logo1.png"
       alt="Logo"
       className="h-14 object-contain scale-100 transition-transform duration-200"
       draggable={false}

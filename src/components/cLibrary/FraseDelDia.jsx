@@ -20,10 +20,8 @@ const FraseDelDia = () => {
     }
 
     // Si no hay frase válida -> obtener una nueva
-    fetch(
-      "https://api.allorigins.win/get?url=" +
-        encodeURIComponent("https://frasedeldia.azurewebsites.net/api/phrase")
-    )
+    fetch("https://corsproxy.io/?" + encodeURIComponent("https://frasedeldia.azurewebsites.net/api/phrase"))
+
       .then((res) => res.json())
       .then((data) => {
         const parsed = JSON.parse(data.contents);
