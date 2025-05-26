@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import { Book, User, Clock, BarChart2, Trash } from "lucide-react";
 import Volver from "../components/Volver";
 import Loading from "../components/Loading";
+import { Link } from "react-router";
 
 const LecturasUsuario = () => {
   const [lecturas, setLecturas] = useState([]);
@@ -138,12 +139,12 @@ const LecturasUsuario = () => {
                       </div>
 
                       <div className="flex flex-col items-end gap-2 whitespace-nowrap">
-                        <a
-                          href={`/lectura/${lectura.libro_id}`}
+                        <Link
+                          to={`/lectura/${lectura.libro_id}`}
                           className="inline-flex items-center gap-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition"
                         >
                           <Book size={16} /> Continuar
-                        </a>
+                        </Link>
                         <button
                           onClick={() => dejarDeLeer(lectura.libro_id)}
                           className="inline-flex items-center gap-2 border border-red-500 text-red-500 px-4 py-2 rounded-lg hover:bg-red-50 transition"

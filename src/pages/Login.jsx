@@ -101,7 +101,7 @@ const Login = () => {
   return (
     <div className="min-h-screen flex flex-col items-center px-2 bg-gradient-to-tr from-fuchsia-200 via-violet-100 to-violet-300 dark:from-zinc-900 dark:via-fuchsia-950 dark:to-zinc-900 transition-all duration-300">
        <img
-      src="/src/img/Logo1.png"
+     src="/Logo1.png"
       alt="Logo"
       className="h-14 object-contain scale-100 transition-transform duration-200 mt-8"
       draggable={false}
