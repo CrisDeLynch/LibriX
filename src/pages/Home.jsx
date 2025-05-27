@@ -43,10 +43,15 @@ const Home = () => {
             </Link>
           </div>
         </div>
+         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+        <div className="w-11 h-11 rounded-full border-2 border-white bg-white/10 backdrop-blur-md shadow-md flex items-center justify-center text-white text-2xl animate-bounce">
+          <i className="fas fa-chevron-down"></i>
+        </div>
+      </div>
       </header>
 
       {/* SECCION 2 */}
-      <section className="snap-start h-screen flex flex-col justify-center items-center bg-pink-50 text-center px-6">
+      <section className="relative snap-start h-screen flex flex-col justify-center items-center bg-pink-50 text-center px-6">
         <h2 className="text-4xl font-extrabold mb-5 text-purple-800 drop-shadow">
           Miles de libros, una sola biblioteca
         </h2>
@@ -56,10 +61,15 @@ const Home = () => {
         <Link to="/libros" className="bg-gradient-to-r from-indigo-600 to-fuchsia-500 text-white py-4 px-12 rounded-full font-semibold shadow-md text-lg hover:scale-105 transition-all duration-300">
           Empieza a explorar
         </Link>
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+          <div className="w-11 h-11 rounded-full border-2 border-fuchsia-500 bg-fuchsia-100/40 backdrop-blur-md shadow-md flex items-center justify-center text-fuchsia-600 text-2xl animate-bounce">
+            <i className="fas fa-chevron-down"></i>
+          </div>
+        </div>
       </section>
 
       {/* SECCION 3 */}
-      <section className="snap-start h-screen flex flex-col justify-center items-center bg-white text-center px-6">
+      <section className="relative snap-start h-screen flex flex-col justify-center items-center bg-white text-center px-6">
         <h2 className="text-4xl font-bold mb-14 text-indigo-800">
           Nuestra comunidad crece cada día
         </h2>
@@ -71,10 +81,15 @@ const Home = () => {
             </div>
           ))}
         </div>
+         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+          <div className="w-11 h-11 rounded-full border-2 border-indigo-500 bg-indigo-100/40 backdrop-blur-md shadow-md flex items-center justify-center text-indigo-600 text-2xl animate-bounce">
+            <i className="fas fa-chevron-down"></i>
+          </div>
+        </div>
       </section>
 
  
-      <section className="snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-br from-pink-100 via-purple-100 to-indigo-100 text-center px-6">
+      <section className="relative snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-br from-pink-100 via-purple-100 to-indigo-100 text-center px-6">
         <h2 className="text-4xl font-bold mb-7 text-purple-800">
           ¿No sabes por dónde empezar?
         </h2>
@@ -88,10 +103,15 @@ const Home = () => {
             </Link>
           ))}
         </div>
+         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+          <div className="w-11 h-11 rounded-full border-2 border-purple-500 bg-purple-100/40 backdrop-blur-md shadow-md flex items-center justify-center text-purple-700 text-2xl animate-bounce">
+            <i className="fas fa-chevron-down"></i>
+          </div>
+        </div>
       </section>
 
 
-      <section className="snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-center px-6">
+      <section className="relative snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-center px-6">
         <h2 className="text-4xl font-bold mb-16 text-indigo-800">
           Elige tu plan
         </h2>
@@ -121,6 +141,11 @@ const Home = () => {
               </Link>
             </div>
           ))}
+        </div>
+         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+          <div className="w-11 h-11 rounded-full border-2 border-fuchsia-700 bg-fuchsia-200/40 backdrop-blur-md shadow-md flex items-center justify-center text-fuchsia-700 text-2xl animate-bounce">
+            <i className="fas fa-chevron-down"></i>
+          </div>
         </div>
       </section>
 

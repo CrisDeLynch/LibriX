@@ -14,11 +14,6 @@ const RegisterStep1 = ({ formData, handleChange, onNext }) => {
   const validate = () => {
     if (!(formData.nombre || "").trim() || !(formData.apellidos || "").trim()) {
       toast.error("Rellena ambos campos para continuar.", {
-        hideProgressBar: false,
-        style: {
-          borderRadius: "12px",
-          fontWeight: "bold",
-        }
       });
       return false;
     }

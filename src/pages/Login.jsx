@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import bcrypt from "bcryptjs";
 import { toast } from "react-toastify";
 import { FaLock, FaUserAlt } from "react-icons/fa";
+import Volver from "../components/Volver";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -100,32 +101,25 @@ const Login = () => {
   };
   return (
     <div className="min-h-screen flex flex-col items-center px-2 bg-gradient-to-tr from-fuchsia-200 via-violet-100 to-violet-300 dark:from-zinc-900 dark:via-fuchsia-950 dark:to-zinc-900 transition-all duration-300">
-       <img
-     src="/Logo1.png"
-      alt="Logo"
-      className="h-14 object-contain scale-100 transition-transform duration-200 mt-8"
-      draggable={false}
-    />
-    <span
-      className="
-        mt-[-0.8rem]
-      text-3xl
-      font-extrabold
-      text-transparent
-      bg-clip-text
-      bg-gradient-to-r
-      from-purple-500
-      via-pink-400
-      to-purple-500
-      drop-shadow-md
-      tracking-wide
-      select-none
-      text-center
-      mb-8
-    "
-    >
-      LibriX
-    </span>
+      
+       <div className="absolute left-2 top-4 sm:left-4 sm:top-6">
+        <Volver/>
+      </div>
+        
+      <div className="w-full max-w-xl relative px-4 pt-6 mb-8">
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src="/Logo1.png"
+            alt="Logo"
+            className="h-14 object-contain transition-transform duration-200"
+            draggable={false}
+          />
+          <span className="mt-[-0.6rem] text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-400 to-purple-500 drop-shadow-md tracking-wide select-none text-center">
+            LibriX
+          </span>
+        </div>
+      </div>
+
       <div className="bg-white/95 dark:bg-zinc-800/90 rounded-3xl shadow-2xl px-8 py-10 md:px-16 md:py-14 w-full max-w-xl flex flex-col items-center border border-violet-100 dark:border-fuchsia-900/40 mt-0">
         <h2 className="text-4xl font-extrabold text-center text-fuchsia-800 dark:text-fuchsia-100 mb-8 mt-2 drop-shadow">
           Iniciar Sesión
