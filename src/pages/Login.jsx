@@ -3,7 +3,7 @@ import { cliente } from "../conexionApi";
 import { useNavigate } from "react-router";
 import bcrypt from "bcryptjs";
 import { toast } from "react-toastify";
-import { FaLock, FaUserAlt } from "react-icons/fa";
+import { FaLock, FaUserAlt, FaEye, FaEyeSlash} from "react-icons/fa";
 import Volver from "../components/Volver";
 
 const Login = () => {
@@ -13,6 +13,7 @@ const Login = () => {
     contrasena: "",
   });
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const inputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -150,7 +151,7 @@ const Login = () => {
             <div className="relative">
               <FaLock className="absolute left-3 top-1/2 -translate-y-1/2 text-fuchsia-400 text-lg" />
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="contrasena"
                 value={formData.contrasena}
                 autoComplete="current-password"
@@ -159,6 +160,13 @@ const Login = () => {
                 className="w-full pl-10 pr-4 py-4 border-2 rounded-xl bg-white/90 dark:bg-fuchsia-900/20 dark:text-white shadow-md outline-none focus:ring-2 focus:ring-fuchsia-400 border-fuchsia-200 text-base transition-all duration-200"
                 placeholder="Contraseña"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-fuchsia-500 hover:text-fuchsia-700 focus:outline-none"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
             </div>
           </div>
           <button
