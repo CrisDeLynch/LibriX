@@ -17,6 +17,8 @@ const PerfilUsuario = () => {
 
   const [formData, setFormData] = useState({
     nombre: "",
+    apellidos: "",
+    usuario: "",
     email: "",
     tarjeta: "",
     fecha_tarjeta: "",
@@ -34,6 +36,8 @@ const PerfilUsuario = () => {
       setFormData((prev) => ({
         ...prev,
         nombre: usuarioGuardado.nombre,
+        apellidos: usuarioGuardado.apellidos,
+        usuario: usuarioGuardado.usuario,
         email: usuarioGuardado.email,
       }));
 
@@ -95,7 +99,17 @@ const PerfilUsuario = () => {
   const guardarCambios = async () => {
     if (!usuario) return;
 
-    const { nombre, email, tarjeta, cvc, mes, anio, fecha_tarjeta } = formData;
+    const {
+      nombre,
+      apellidos,
+      usuario: nombreUsuario,
+      email,
+      tarjeta,
+      cvc,
+      mes,
+      anio,
+      fecha_tarjeta,
+    } = formData;
     const nuevaFechaVencimiento =
       mes && anio ? `${anio}-${mes}-01` : fecha_tarjeta;
 
@@ -108,6 +122,8 @@ const PerfilUsuario = () => {
       .from("usuario")
       .update({
         nombre,
+        apellidos,
+        usuario: nombreUsuario,
         email,
         tarjeta: tarjetaOculta,
         fecha_tarjeta: nuevaFechaVencimiento,
@@ -125,8 +141,10 @@ const PerfilUsuario = () => {
       };
       localStorage.setItem("usuario", JSON.stringify(actualizado));
       setUsuario(actualizado);
+      
       setEditando(false);
       toast.success("Cambios guardados correctamente.");
+      window.location.reload();
     } else {
       toast.error("Error al guardar los datos.");
     }
@@ -148,8 +166,8 @@ const PerfilUsuario = () => {
       <main className="max-w-3xl mx-auto px-6 py-12 space-y-10">
         <section className="bg-white rounded-2xl shadow-md p-6 border flex items-center gap-4">
           <AvatarIniciales
-            nombre={formData.nombre}
-            apellidos={formData.apellidos}
+            nombre={usuario?.nombre}
+            apellidos={usuario?.apellidos}
             tamaño="lg"
           />
           <div>
