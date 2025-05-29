@@ -13,7 +13,7 @@ export default function TarjetaAutor({ autor }) {
   };
 
   return (
-    <div className="mt-8 mb-20 w-full bg-white/90 border border-violet-200 rounded-2xl shadow-sm p-6 flex flex-col sm:flex-row gap-6 items-start backdrop-blur">
+    <div className="mt-8 mb-20 max-w-5xl mx-auto bg-white/90 border border-violet-200 rounded-2xl shadow-sm p-6 flex flex-col sm:flex-row gap-6 items-start backdrop-blur">
       <img
         src={autor.foto_url}
         alt={`Foto de ${autor.nombre}`}

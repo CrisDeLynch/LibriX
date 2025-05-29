@@ -84,7 +84,7 @@ const ComentariosLibro = ({ libroId }) => {
   };
 
   return (
-    <section className=" pb-6">
+    <section className=" pb-6 px-4 sm:px-0">
       <div className="max-w-5xl mx-auto bg-purple-100 p-8 rounded-2xl shadow-md">
         <h3 className="text-3xl font-bold text-purple-700 text-center mb-4">
           Comentarios

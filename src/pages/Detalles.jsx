@@ -125,7 +125,7 @@ const Detalles = () => {
 
         {autor && (
           <div className="mt-10">
-            <h3 className="text-xl font-semibold text-violet-700 mb-4">
+            <h3 className="text-xl font-semibold text-violet-700 mb-4 ml-12">
               Sobre el autor
             </h3>
             <TarjetaAutor autor={autor} />
