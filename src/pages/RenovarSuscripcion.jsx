@@ -27,7 +27,7 @@ const RenovarSuscripcion = () => {
   const [planSeleccionado, setPlanSeleccionado] = useState(PLANES[0].id);
   const [confirmado, setConfirmado] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [estado, setEstado] = useState(null); // <- null al principio
+  const [estado, setEstado] = useState(null); 
   const [fechaFin, setFechaFin] = useState(null);
   const [idSuscripcion, setIdSuscripcion] = useState(null);
 

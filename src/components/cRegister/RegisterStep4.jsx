@@ -3,6 +3,7 @@ import { FaUserAlt, FaLock, FaEye, FaEyeSlash, FaCheck } from "react-icons/fa";
 import { cliente } from "../../conexionApi";
 
 const MIN_PASSWORD = 6;
+const MAX_PASSWORD = 25;
 const MAX_USER = 20;
 
 const RegisterStep4 = ({ formData, handleChange, onBack }) => {
@@ -106,6 +107,7 @@ const RegisterStep4 = ({ formData, handleChange, onBack }) => {
             name="contrasena"
             value={formData.contrasena}
             autoComplete="new-password"
+            maxLength={MAX_PASSWORD}
             onChange={(e) => {
               handleChange(e);
               setTouched((t) => ({ ...t, contrasena: true }));
@@ -120,6 +122,11 @@ const RegisterStep4 = ({ formData, handleChange, onBack }) => {
             }`}
             placeholder="Crea una contraseña"
           />
+             <div className="flex justify-between items-center mt-1 text-xs min-h-[1.25rem]">
+             <span className="text-gray-400">
+              {(formData.contrasena || "").length}/{MAX_PASSWORD}
+            </span>
+          </div>
           <button
             type="button"
             onClick={() => setMostrarContrasena((p) => !p)}
