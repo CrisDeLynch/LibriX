@@ -103,7 +103,7 @@ const Login = () => {
   return (
     <div className="min-h-screen flex flex-col items-center px-2 bg-gradient-to-tr from-fuchsia-200 via-violet-100 to-violet-300 dark:from-zinc-900 dark:via-fuchsia-950 dark:to-zinc-900 transition-all duration-300">
       
-       <div className="absolute left-2 top-4 sm:left-4 sm:top-6">
+       <div className="absolute left-2 top-4 sm:left-4 sm:top-6 z-50">
         <Volver/>
       </div>
         

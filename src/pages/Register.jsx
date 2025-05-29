@@ -122,7 +122,7 @@ const Register = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-fuchsia-200 via-violet-100 to-violet-300 dark:from-zinc-900 dark:via-fuchsia-950 dark:to-zinc-900 flex flex-col items-center px-2 pb-10">
       
-      <div className="absolute left-2 top-4 sm:left-4 sm:top-6">
+      <div className="absolute left-2 top-4 sm:left-4 sm:top-6 z-50">
         <Volver/>
       </div>
       <div className="w-full max-w-xl relative px-4 pt-6 mb-8">
