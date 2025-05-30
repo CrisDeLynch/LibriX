@@ -44,6 +44,19 @@ const TarjetaForm = ({ formData, setFormData, guardarCambios }) => {
       return;
     }
 
+    const mesActual = new Date().getMonth() + 1;
+    const anioActual = new Date().getFullYear();
+    const mesSeleccionado = parseInt(mes, 10);
+    const anioSeleccionado = parseInt(anio, 10);
+
+    if (
+      anioSeleccionado < anioActual ||
+      (anioSeleccionado === anioActual && mesSeleccionado < mesActual)
+    ) {
+      toast.error("La tarjeta ya está vencida.");
+      return;
+    }
+
     if (!cvc.trim()) {
       toast.error("El código CVC es obligatorio.");
       return;
