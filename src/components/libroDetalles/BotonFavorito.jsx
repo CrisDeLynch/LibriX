@@ -6,6 +6,8 @@ export default function BotonFavorito({ usuarioId, libroId }) {
   const [esFavorito, setEsFavorito] = useState(false);
   const [favoritoId, setFavoritoId] = useState(null);
   const [cargando, setCargando] = useState(true);
+  const [procesando, setProcesando] = useState(false);
+
 
   useEffect(() => {
     const comprobarFavorito = async () => {
@@ -31,6 +33,10 @@ export default function BotonFavorito({ usuarioId, libroId }) {
   }, [usuarioId, libroId]);
 
   const alternarFavorito = async () => {
+     if (procesando) return; 
+    setProcesando(true);
+
+
     if (esFavorito) {
       await cliente.from('favorito').delete().eq('id', favoritoId);
       setEsFavorito(false);
@@ -47,6 +53,7 @@ export default function BotonFavorito({ usuarioId, libroId }) {
         setFavoritoId(data.id);
       }
     }
+    setProcesando(false);
   };
 
   if (cargando) return null;
@@ -54,7 +61,10 @@ export default function BotonFavorito({ usuarioId, libroId }) {
   return (
     <button
       onClick={alternarFavorito}
-      className="flex items-center gap-2 px-3 py-2 border border-purple-300 rounded-full hover:bg-purple-50 transition-all text-sm"
+      disabled={procesando}
+      className={`flex items-center gap-2 px-3 py-2 border border-purple-300 rounded-full hover:bg-purple-50 transition-all text-sm ${
+      procesando ? 'opacity-50 cursor-not-allowed' : 'hover:bg-purple-50'
+     }`}
       aria-label={esFavorito ? "Eliminar de favoritos" : "Añadir a favoritos"}
     >
       {esFavorito ? (
