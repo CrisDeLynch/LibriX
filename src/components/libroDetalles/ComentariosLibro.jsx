@@ -63,6 +63,11 @@ const ComentariosLibro = ({ libroId }) => {
   };
 
   const guardarEdicion = async () => {
+     if (!comentarioEditado.trim()) {
+      toast.error("El comentario no puede estar vacío.");
+      return;
+    }
+
     const { error } = await cliente
       .from("comentario")
       .update({ comentario: comentarioEditado })
