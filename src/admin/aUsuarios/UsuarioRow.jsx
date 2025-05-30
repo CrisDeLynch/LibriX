@@ -1,4 +1,4 @@
-import { FaUserEdit, FaUserSlash } from "react-icons/fa";
+import { FaUserEdit } from "react-icons/fa";
 
 export default function UsuarioRow({ usuario, onEdit, onDelete }) {
   return (
@@ -16,20 +16,15 @@ export default function UsuarioRow({ usuario, onEdit, onDelete }) {
       </td>
       <td className="px-3 py-2 border">{new Date(usuario.fecha_registro).toLocaleDateString()}</td>
       <td className="px-3 py-2 border">
+      <div className="flex justify-center">
         <button
           title="Editar usuario"
-          className="mr-2 text-blue-600 hover:text-blue-900"
+          className="text-blue-600 hover:text-blue-900"
           onClick={() => onEdit(usuario)}
         >
-          <FaUserEdit />
+        <FaUserEdit />
         </button>
-        <button
-          title="Eliminar usuario"
-          className="text-red-500 hover:text-red-800"
-          onClick={() => onDelete(usuario)}
-        >
-          <FaUserSlash />
-        </button>
+      </div> 
       </td>
     </tr>
   );

@@ -162,23 +162,9 @@ export default function UsuariosAdmin() {
           value={editUser?.rol ?? ""}
           onChange={(e) => setEditUser({ ...editUser, rol: e.target.value })}
         >
-          <option value="user">Usuario</option>
+          <option value="usuario">Usuario</option>
           <option value="admin">Administrador</option>
         </select>
-      </ModalUsuarios>
-
-      {/* MODAL ELIMINAR */}
-      <ModalUsuarios
-        open={modalDelete}
-        title="Eliminar usuario"
-        onAccept={handleDelete}
-        onCancel={() => setModalDelete(false)}
-        acceptLabel="Eliminar"
-        danger
-      >
-        <p>
-          ¿Seguro que quieres eliminar a <b>{deleteUser?.nombre}</b>?
-        </p>
       </ModalUsuarios>
 
       <Footer />
