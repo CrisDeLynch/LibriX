@@ -116,7 +116,7 @@ const Register = () => {
           theme: "colored",
         });
     
-    navigate("/libros");
+    navigate("/ingreso");
   };
 
   return (
