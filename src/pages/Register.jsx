@@ -127,15 +127,17 @@ const Register = () => {
       </div>
       <div className="w-full max-w-xl relative px-4 pt-6 mb-8">
       <div className="flex flex-col items-center justify-center">
-        <img
-          src="/Logo1.png"
-          alt="Logo"
-          className="h-14 object-contain scale-100 transition-transform duration-200"
-          draggable={false}
-        />
-        <span className="mt-[-0.6rem] text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-400 to-purple-500 drop-shadow-md tracking-wide select-none text-center">
-          LibriX
-        </span>
+        <Link to="/libros" className="flex flex-col items-center justify-center group">
+            <img
+              src="/Logo1.png"
+              alt="Logo"
+              className="h-14 object-contain transition-transform duration-200 group-hover:scale-105"
+              draggable={false}
+            />
+            <span className="mt-[-0.6rem] text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-400 to-purple-500 drop-shadow-md tracking-wide select-none text-center">
+              LibriX
+            </span>
+          </Link>
       </div>
     </div>
 
