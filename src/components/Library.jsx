@@ -19,22 +19,38 @@ const Library = () => {
   }, []);
 
   useEffect(() => {
-    cliente.from("libro").select("*").order("id", { ascending: false }).limit(6)
+    cliente
+      .from("libro")
+      .select("*")
+      .order("id", { ascending: false })
+      .limit(6)
       .then(({ data }) => setLibros(data || []));
   }, []);
 
   useEffect(() => {
     if (!userId) return setLoading(false);
     const getRecomendados = async () => {
-      const { data: lecturas } = await cliente.from("lectura_usuario")
-        .select("libro_id").eq("usuario_id", userId);
-      if (!lecturas?.length) return setLoading(false);
-      const ids = lecturas.map(l => l.libro_id);
-      const { data: generosData } = await cliente.from("libro")
-        .select("genero").in("id", ids);
-      const generos = [...new Set(generosData.map(g => g.genero))];
-      const { data } = await cliente.from("libro")
-        .select("*").in("genero", generos).limit(5);
+      const { data: lecturas } = await cliente
+        .from("lectura_usuario")
+        .select("libro_id")
+        .eq("usuario_id", userId);
+
+       if (!lecturas || lecturas.length < 3) {
+          setRecomendados([]); 
+          return setLoading(false);
+        }
+        
+      const ids = lecturas.map((l) => l.libro_id);
+      const { data: generosData } = await cliente
+        .from("libro")
+        .select("genero")
+        .in("id", ids);
+      const generos = [...new Set(generosData.map((g) => g.genero))];
+      const { data } = await cliente
+        .from("libro")
+        .select("*")
+        .in("genero", generos)
+        .limit(5);
       setRecomendados(data || []);
       setLoading(false);
     };
