@@ -77,10 +77,16 @@ const RegisterStep3 = ({ formData, handleChange, onNext, onBack }) => {
             name="fechaTarjeta"
             value={formData.fechaTarjeta}
             onChange={(e) => {
-              const value = e.target.value;
-              if (/^\d{0,2}(\/\d{0,4})?$/.test(value)) {
-                handleChange(e);
+              let value = e.target.value.replace(/[^0-9]/g, "");
+              if (value.length > 2) {
+                value = value.slice(0, 2) + "/" + value.slice(2, 6);
               }
+              handleChange({
+                target: {
+                  name: "fechaTarjeta",
+                  value,
+                },
+              });
             }}
             maxLength={7}
             placeholder="MM/YYYY"
