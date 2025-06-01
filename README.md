@@ -8,10 +8,10 @@ La idea es ofrecer una experiencia sencilla, bonita y accesible para quienes ama
 
 ## ¿Qué puede hacer LibriX?
 
-- 📚 Ver el catálogo completo de libros, con filtros por género, autor, popularidad, etc.
+- 📚 Ver el catálogo completo de libros.
 - 🔐 Registrarse y acceder con seguridad
-- 💳 Suscribirse (mensual o anual) para poder leer libros sin límites
-- 📖 Leer los libros directamente desde la app, sin tener que descargarlos
+- 💳 Suscribirse (mensual o anual) para poder leer libros.
+- 📖 Leer los libros directamente desde la app, sin tener que descargarlos.
 - 🎛️ Ajustar el tamaño del texto, cambiar el fondo, pasar páginas fácilmente...
 - 🧠 Recibir recomendaciones personalizadas
 - 📊 Ver estadísticas sobre lecturas populares y suscripciones
@@ -71,7 +71,7 @@ La idea es ofrecer una experiencia sencilla, bonita y accesible para quienes ama
 
 ## 🎓 Módulos del ciclo que aplico en este proyecto
 
-- **Desarrollo web en entorno cliente** (React + Bootstrap)
+- **Desarrollo web en entorno cliente** (React + Tailwind)
 - **Desarrollo web en entorno servidor** (Supabase)
 - **Bases de datos** (PostgreSQL)
 - **Diseño de interfaces web** (UX/UI, responsive design)
